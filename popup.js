@@ -46,8 +46,6 @@ var puppyGenerator = {
   }
 };
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
   puppyGenerator.requestPuppies();
   puppyGenerator.reloadPuppies();
