@@ -19,7 +19,7 @@ var puppyGenerator = {
     req.send(null);
   },
 
-  showPhotos: function (event) {
+  showPhotos: function(event) {
     var puppies = event.target.responseXML.querySelectorAll('photo');
     for (var i = 0; i < puppies.length; i++) {
       var img = document.createElement('img');
@@ -29,7 +29,7 @@ var puppyGenerator = {
     }
   },
 
-  constructPuppyURL: function (photo) {
+  constructPuppyURL: function(photo) {
     return "http://farm" + photo.getAttribute("farm") +
         ".staticflickr.com/" + photo.getAttribute("server") +
         "/" + photo.getAttribute("id") +
@@ -46,7 +46,7 @@ var puppyGenerator = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   puppyGenerator.requestPuppies();
   puppyGenerator.reloadPuppies();
 });
