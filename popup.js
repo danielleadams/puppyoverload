@@ -2,7 +2,7 @@ var QUERY = 'lab puppies';
 var PAGE = 0;
 
 var puppyGenerator = {
-  searchOnFlickr: function(page) {
+  _searchOnFlickr: function(page) {
     return 'https://secure.flickr.com/services/rest/?' +
     'method=flickr.photos.search&' +
     'api_key=53caa6bf9c68533d9fc34ca096bc6c72&' +
@@ -14,7 +14,7 @@ var puppyGenerator = {
 
   requestPuppies: function() {
     var req = new XMLHttpRequest();
-    req.open("GET", this.searchOnFlickr(++PAGE), true);
+    req.open("GET", this._searchOnFlickr(++PAGE), true);
     req.onload = this.showPhotos.bind(this);
     req.send(null);
   },
@@ -23,13 +23,13 @@ var puppyGenerator = {
     var puppies = event.target.responseXML.querySelectorAll('photo');
     for (var i = 0; i < puppies.length; i++) {
       var img = document.createElement('img');
-      img.src = this.constructPuppyURL(puppies[i]);
+      img.src = this._constructPuppyURL(puppies[i]);
       img.setAttribute('alt', puppies[i].getAttribute('title'));
       document.body.appendChild(img);
     }
   },
 
-  constructPuppyURL: function(photo) {
+  _constructPuppyURL: function(photo) {
     return "http://farm" + photo.getAttribute("farm") +
         ".staticflickr.com/" + photo.getAttribute("server") +
         "/" + photo.getAttribute("id") +
