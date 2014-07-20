@@ -41,6 +41,7 @@ var puppyGenerator = {
   },
   setPuppyLayout: function(photo) {
     photo.setAttribute('style', 'border: 1px solid black; margin: 5px');
+    photo.setAttribute('align', 'justify')
     photo.setAttribute('width', '143px');
     photo.setAttribute('height', '143px');
   },
