@@ -41,8 +41,8 @@ var puppyGenerator = {
   },
   setPuppyLayout: function(photo) {
     photo.setAttribute('style', 'border: 1px solid black; margin: 5px');
-    photo.setAttribute('width', '148px');
-    photo.setAttribute('height', '148px');
+    photo.setAttribute('width', '143px');
+    photo.setAttribute('height', '143px');
   },
   reloadPuppies: function() {
     document.addEventListener('scroll', function(event) {
