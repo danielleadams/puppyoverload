@@ -3,7 +3,7 @@ var PAGE = 0;
 
 var puppyGenerator = {
   init: function() {
-    // document.body.innerHTML();
+    document.body.innerHTML = "";
     this.requestPuppies();
     this.reloadPuppies();
   },
