@@ -2,6 +2,10 @@ var QUERY = 'lab puppies';
 var PAGE = 0;
 
 var puppyGenerator = {
+  init: function() {
+    this.requestPuppies();
+    this.reloadPuppies();
+  },
   _searchOnFlickr: function(page) {
     return 'https://secure.flickr.com/services/rest/?' +
     'method=flickr.photos.search&' +
@@ -11,14 +15,12 @@ var puppyGenerator = {
     'sort=interestingness-desc&' + 'per_page=100&' +
     'page=' + page.toString();
   },
-
   requestPuppies: function() {
     var req = new XMLHttpRequest();
     req.open('GET', this._searchOnFlickr(++PAGE), true);
     req.onload = this.showPhotos.bind(this);
     req.send(null);
   },
-
   showPhotos: function(event) {
     var puppies = event.target.responseXML.querySelectorAll('photo');
     for (var i = 0; i < puppies.length; i++) {
@@ -28,7 +30,6 @@ var puppyGenerator = {
       document.body.appendChild(img);
     }
   },
-
   _constructPuppyURL: function(photo) {
     return 'http://farm' + photo.getAttribute('farm') +
         '.staticflickr.com/' + photo.getAttribute('server') +
@@ -36,7 +37,6 @@ var puppyGenerator = {
         '_' + photo.getAttribute('secret') +
         '_q.jpg';
   },
-
   reloadPuppies: function() {
     document.addEventListener('scroll', function(event) {
       if (document.body.scrollHeight == document.body.scrollTop + window.innerHeight) {
@@ -46,7 +46,7 @@ var puppyGenerator = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-  puppyGenerator.requestPuppies();
-  puppyGenerator.reloadPuppies();
-});
+(function(document) {
+  console.log('Puppy overloadddd');
+  puppyGenerator.init();
+})(document);
