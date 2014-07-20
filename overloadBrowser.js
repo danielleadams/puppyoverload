@@ -31,7 +31,7 @@ var puppyGenerator = {
     }
   },
   _constructPuppyURL: function(photo) {
-    return 'http://farm' + photo.getAttribute('farm') +
+    return 'https://farm' + photo.getAttribute('farm') +
         '.staticflickr.com/' + photo.getAttribute('server') +
         '/' + photo.getAttribute('id') +
         '_' + photo.getAttribute('secret') +
@@ -47,6 +47,6 @@ var puppyGenerator = {
 };
 
 (function(document) {
-  console.log('Puppy overloadddd');
+  console.log('Puppy overloadddd...');
   puppyGenerator.init();
 })(document);
