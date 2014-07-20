@@ -14,7 +14,7 @@ var puppyGenerator = {
 
   requestPuppies: function() {
     var req = new XMLHttpRequest();
-    req.open("GET", this._searchOnFlickr(++PAGE), true);
+    req.open('GET', this._searchOnFlickr(++PAGE), true);
     req.onload = this.showPhotos.bind(this);
     req.send(null);
   },
@@ -30,15 +30,15 @@ var puppyGenerator = {
   },
 
   _constructPuppyURL: function(photo) {
-    return "http://farm" + photo.getAttribute("farm") +
-        ".staticflickr.com/" + photo.getAttribute("server") +
-        "/" + photo.getAttribute("id") +
-        "_" + photo.getAttribute("secret") +
-        "_q.jpg";
+    return 'http://farm' + photo.getAttribute('farm') +
+        '.staticflickr.com/' + photo.getAttribute('server') +
+        '/' + photo.getAttribute('id') +
+        '_' + photo.getAttribute('secret') +
+        '_q.jpg';
   },
 
   reloadPuppies: function() {
-    document.addEventListener("scroll", function(event) {
+    document.addEventListener('scroll', function(event) {
       if (document.body.scrollHeight == document.body.scrollTop + window.innerHeight) {
         puppyGenerator.requestPuppies();
       }
