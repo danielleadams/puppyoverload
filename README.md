@@ -1,13 +1,11 @@
 puppyoverload
 =============
 
-When you need to calm down, look at this collection of puppy images that is never-ending.
+###About
+The internet's a stressful place. De-stress with Puppy Overload! The bookmarklet gets rid of all the content on your page to make room for endless pictures of lab puppies.
 
+###Installation
+Download it from the Chrome Web Store [here](https://chrome.google.com/webstore/detail/puppy-overload/jdgnnbkkejnolpimodbifmlchcppgpoe)!
 
-*Implementation
-
-1. Clone repo.
-2. Open Google Chrome.
-3. Visit Tools > Extensions.
-4. Click 'Load unpacked extensions' button.
-5. Select the puppyoverload directory.
+###Usage
+Once it's installed, click on the paw icon when you want puppy overload!
