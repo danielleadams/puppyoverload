@@ -41,13 +41,15 @@ var puppyGenerator = {
   },
   setPuppyLayout: function(photo) {
     photo.setAttribute('style', 'border: 1px solid black; margin: 5px');
-    photo.setAttribute('align', 'justify')
+    photo.setAttribute('align', 'justify');
     photo.setAttribute('width', '143px');
     photo.setAttribute('height', '143px');
   },
   reloadPuppies: function() {
     document.addEventListener('scroll', function(event) {
-      if (document.body.scrollHeight == document.body.scrollTop + window.innerHeight) {
+      var scrollLocation = document.body.scrollHeight;
+      var scrollDistance = document.body.scrollTop + window.innerHeight;
+      if (scrollLocation == scrollDistance) {
         puppyGenerator.requestPuppies();
       }
     });
